@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Display on Button Click</title>
+</head>
+<body>
+    <button onclick="displayImage('image1.jpg')">Show Image 1</button>
+    <button onclick="displayImage('image2.jpg')">Show Image 2</button>
+    <br>
+    <img id="displayedImage" src="image4.jpg" height="200px" width="200px" alt="Displayed Image">
+
+    <script>
+        function displayImage(imageUrl) {
+            var imageElement = document.getElementById('displayedImage');
+            imageElement.src = imageUrl;
+        }
+    </script>
+</body>
+</html>

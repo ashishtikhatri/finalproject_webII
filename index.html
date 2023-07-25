@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" media="(min-width: 640px)" href="all_pc.css">
+<link rel="stylesheet" media="(max-width: 640px)" href="all_smp.css">
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<link href="flexslider.css" rel="stylesheet">
+<script src="jquery.flexslider-min.js"></script>
+<script>
+  $(function(){
+    $('.flexslider').flexslider({
+      animation: "slide"
+    });
+
+       // Handle click events on the topnavde links
+    $('.topnavde a').click(function(e) {
+      e.preventDefault(); // Prevent default link behavior
+      var pageUrl = $(this).attr('href');
+      
+      // If it's the "Top page" link, scroll to the top of the page
+      if (pageUrl === 'index.html') {
+        $('html, body').animate({ scrollTop: 0 }, 'slow');
+      } else {
+        // For other links, update the iframe source
+        $('#contentFrame').attr('src', pageUrl);
+      }
+    });
+  });
+
+</script>
+</head>
+<body style="background-image:url(bg050.gif);">
+<div id="pagebody" style="height: 1200px;">
+	<header>
+	<div class="flexslider" style="border-color:#CFC;">
+      <ul class="slides">
+        <li><img src="img/1.jpg" /></li>
+        <li><img src="img/2.jpg" /></li>
+        <li><img src="img/3.jpg" /></li>
+        <li><img src="img/4.jpg" /></li>
+        <li><img src="img/5.jpg" /></li>
+        <li><img src="img/6.jpg" /></li>
+        <li><img src="img/7.jpg" /></li>
+        <li><img src="img/8.jpg" /></li>
+      </ul>
+    </div>
+
+    <div class="topnav">
+      <div class="topnavde" style="float: left;"><a href="index.html"><b>Top page</b></a></div>
+      <div class="topnavde"><a href="score.html"><b>Score</b></a></div>
+      <div class="topnavde"><a href="shop/shop.html"><b>Shop</b></a></div>
+      <div class="topnavde"><a href="javascript_progress.html"><b>JS World</b></a></div>
+      <div class="topnavde"><a href="membership.html"><b>Form</b></a></div>
+      <div class="topnavde"><a href="googlemap.html"><b>GoogleMap</b></a></div>
+      <div class="topnavde"><a href="anime.html"><b>Animation</b></a></div>
+    </div>
+
+	</header>
+  <iframe id="contentFrame" src="introduction.html" width="900" height="1000"></iframe>
+
+	<footer>Copyright (C) 2018s copyrights. KCGI.All Rights Reserved.</footer>
+</div>
+</body>
+</html>

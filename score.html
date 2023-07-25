@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Grades</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 20px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 8px;
+      text-align: left;
+    }
+
+    th {
+      background-color: #007bff;
+      color: #fff;
+    }
+
+    .highlight {
+      background-color: #e5ff00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Grades</h1>
+
+    <p><b>There are six students. Their scores are as follows:</b></p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+      <script>
+        const names = ["Wang", "Chen", "Zhao", "Liu", "Yamamoto", "Tanaka"];
+        const scores = [80, 75, 92, 60, 91, 82];
+
+        for (var i = 0; i < scores.length; i++) {
+          document.write("<tr>");
+          document.write("<td>" + names[i] + "</td>");
+          document.write("<td>" + scores[i] + "</td>");
+          document.write("</tr>");
+        }
+      </script>
+    </table>
+
+    <p><b>The following are the students who can get an A:</b></p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+      <script>
+        for (var i = 0; i < scores.length; i++) {
+          if (scores[i] >= 90) {
+            document.write("<tr class='highlight'>");
+            document.write("<td>" + names[i] + "</td>");
+            document.write("<td>" + scores[i] + "</td>");
+            document.write("</tr>");
+          }
+        }
+      </script>
+    </table>
+
+    <p>Total score is <span id="totalScore"></span></p>
+    <p>The average score is <span id="averageScore"></span></p>
+
+    <p><b>Sort scores in descending order:</b></p>
+    <table>
+      <tr>
+        <th>Name</th>
+        <th>Score</th>
+      </tr>
+      <script>
+        var sum = 0;
+
+        for (var i = 0; i < scores.length; i++) {
+          for (var j = i + 1; j < scores.length; j++) {
+            if (scores[i] < scores[j]) {
+              var temp1 = scores[i];
+              scores[i] = scores[j];
+              scores[j] = temp1;
+              var temp2 = names[i];
+              names[i] = names[j];
+              names[j] = temp2;
+            }
+          }
+
+          document.write("<tr>");
+          document.write("<td>" + names[i] + "</td>");
+          document.write("<td>" + scores[i] + "</td>");
+          document.write("</tr>");
+
+          sum += scores[i];
+        }
+
+        var average = sum / scores.length;
+        document.getElementById("totalScore").innerText = sum;
+        document.getElementById("averageScore").innerText = average.toFixed(2);
+      </script>
+    </table>
+  </div>
+</body>
+</html>

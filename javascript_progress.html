@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>JavaScript Progress</title>
+</head>
+
+<body style="font-family: Arial, sans-serif; margin: 20px; background-color: #f2f2f2;">
+
+
+    <input type="text" id="name" name="name"
+        style="margin-bottom: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px; width: 250px;">
+    <button onclick="showInputText()"
+        style="padding: 8px 15px; background-color: #007bff; color: #fff; border: 1; border-radius: 5px; cursor: pointer;">Show
+        Text</button><br>
+
+    <textarea name="comment" id="comment" cols="30" rows="2"
+        style="margin-bottom: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px; width: 250px; resize: vertical;"></textarea>
+    <button onclick="showInputComment()"
+        style="padding: 8px 15px; background-color: #007bff; color: #fff; border: 1; border-radius: 5px; cursor: pointer;">Show
+        Text</button><br>
+
+    <p style="font-weight: bold; margin-bottom: 5px;">Please select your favorite color:</p>
+
+    <!-- Radio buttons -->
+    <input type="radio" name="color" value="red" style="margin-right: 5px;">Red
+    <input type="radio" name="color" value="yellow" style="margin-right: 5px;">Yellow
+    <input type="radio" name="color" value="blue" style="margin-right: 5px;">Blue <br />
+
+    <!-- onclick button for radio options -->
+    <button onclick="showInputColor()"
+        style="padding: 8px 15px; background-color: #007bff; color: #fff; border: 1; border-radius: 5px; cursor: pointer;">Show
+        selected color</button>
+
+    <p style="font-weight: bold; margin-bottom: 5px;">Please select the language you can speak</p>
+    <!-- Checkboxes -->
+    <input type="checkbox" id="checkboxOption1" value="Japanese" style="margin-right: 5px;">
+    <label for="checkboxOption1" style="margin-right: 15px;">Japanese</label>
+
+    <input type="checkbox" id="checkboxOption2" value="English" style="margin-right: 5px;">
+    <label for="checkboxOption2" style="margin-right: 15px;">English</label>
+
+    <input type="checkbox" id="checkboxOption3" value="Chinese" style="margin-right: 5px;">
+    <label for="checkboxOption3" style="margin-right: 15px;">Chinese</label>
+
+    <input type="checkbox" id="checkboxOption4" value="Others" style="margin-right: 5px;">
+    <label for="checkboxOption4" style="margin-right: 15px;">Others</label>
+
+    <!-- onclick button for checkboxes -->
+    <button onclick="showSelectLanguage()"
+        style="padding: 8px 15px; background-color: #007bff; color: #fff; border: 1; border-radius: 5px; cursor: pointer;">Click
+        here to choose the language</button> <br> <br>
+
+    <!-- Dropdown (select) element -->
+    <select id="school"
+        style="margin-bottom: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px; width: 250px;">
+        <option value="None">Select School</option>
+        <option value="KCGI UNI">KCGI UNI</option>
+        <option value="KYOTO UNI">KYOTO UNI</option>
+        <option value="SAKURA UNI">SAKURA UNI</option>
+        <option value="TYOKO UN">TYOKO UNI</option>
+        <option value="OTHERS">OTHERS</option>
+    </select>
+
+    <!-- onclick button for dropdown -->
+    <button onclick="showSelectedschool()"
+        style="padding: 8px 15px; background-color: #007bff; color: #fff; border: 1; border-radius: 5px; cursor: pointer;">Choose
+        the school</button> <br> <br>
+
+    <select name="instruments" multiple="multiple" size="4"
+        style="margin-bottom: 10px; padding: 5px; border: 1px solid #ccc; border-radius: 5px; width: 250px;">
+        <option value="guitar">guitar</option>
+        <option value="drums">drums</option>
+        <option value="keyboard">keyboards</option>
+        <option value="bass">bass</option>
+    </select>
+
+    <!-- onclick button for dropdown -->
+    <button onclick="showSelectedInstruments()"
+        style="padding: 8px 15px; background-color: #007bff; color: #fff; border: 1; border-radius: 5px; cursor: pointer;">Choose
+        the instruments</button> <br> <br>
+
+    <input type="submit" value="submit" onclick="showSubmit()"
+        style="padding: 8px 15px; background-color: #007bff; color: #fff; border: 1; border-radius: 5px; cursor: pointer;">
+
+    <!-- onclick button for resetting options -->
+    <button onclick="resetOptions()"
+        style="padding: 8px 15px; background-color: #007bff; color: #fff; border: 1; border-radius: 5px; cursor: pointer; margin-left: 10px;">Reset</button>
+    </br> </br></br>
+
+    <p aria-setsize="5"><b><u>On mouse over to change the picture</u></b></p>
+    <img src="kcg.jpg" height="200px" width="200" alt="picture of KCGI logo"
+    onmouseover="changeImage('kcgi.jpg')" onmouseout="changeImage('kcg.jpg')">
+ </br> </br></br>
+
+        <h1><b><u>Select the pictures to display</u></b></h1>
+
+    <button
+        style="padding: 8px 15px; background-color: #e5ff00; color: #0feb0f; border: 1; border-radius: 5px; cursor: pointer;"
+        onclick="displayImage('image1.jpg')">Picture 1</button>
+    <button
+        style="padding: 8px 15px; background-color: #6215f1; color: #0feb0f; border: 1; border-radius: 5px; cursor: pointer;"
+        onclick="displayImage('image2.jpg')">Picture 2</button>
+    <button
+        style="padding: 8px 15px; background-color: #fa19b6; color: #0feb0f; border: 1; border-radius: 5px; cursor: pointer;"
+        onclick="displayImage('image3.jpg')">Picture 3</button>
+    <button
+        style="padding: 8px 15px; background-color: #e5ff00; color: #0feb0f; border: 1; border-radius: 5px; cursor: pointer;"
+        onclick="displayImage('image4.jpg')">Picture 4</button>
+    <button
+        style="padding: 8px 15px; background-color: #6215f1; color: #0feb0f; border: 1; border-radius: 5px; cursor: pointer;"
+        onclick="displayImage('image5.jpg')">Picture 5</button>
+    <button
+        style="padding: 8px 15px; background-color: #fa19b6; color: #0feb0f; border: 1; border-radius: 5px; cursor: pointer;"
+        onclick="displayImage('image6.jpg')">Picture 6</button>
+
+    <br> <br>
+    <img id="displayedImage" src="image4.jpg" border="1" height="200px" width="200px" alt="Displayed Image">
+
+
+    <script>
+        // Function to show the input text
+        function showInputText() {
+            var inputValue = document.getElementById("name").value;
+            alert("You entered: " + inputValue);
+        }
+
+        // Function to show the input text
+        function showInputComment() {
+            var inputComment = document.getElementById("comment").value;
+            alert("You entered: " + inputComment);
+        }
+
+        // Function to show the selected color
+        function showInputColor() {
+            var colorOptions = document.getElementsByName("color");
+            var selectedColor;
+
+            for (var i = 0; i < colorOptions.length; i++) {
+                if (colorOptions[i].checked) {
+                    selectedColor = colorOptions[i].value;
+                    break;
+                }
+            }
+
+            if (selectedColor) {
+                alert("Selected Color: " + selectedColor);
+            } else {
+                alert("Please select a color.");
+            }
+        }
+
+        // Function to show the selected languages from the checkboxes
+        function showSelectLanguage() {
+            var selectedLanguages = [];
+            var checkboxOptions = document.querySelectorAll('input[type="checkbox"]:checked');
+
+            checkboxOptions.forEach(function (checkbox) {
+                selectedLanguages.push(checkbox.value);
+            });
+
+            alert("Selected Languages: " + selectedLanguages.join(", "));
+        }
+
+        // Function to show the selected option from the dropdown
+        function showSelectedschool() {
+            var selectedOption = document.getElementById("school").value;
+            alert("Selected Option: " + selectedOption);
+        }
+
+        // Function to show the selected instruments from the dropdown
+        function showSelectedInstruments() {
+            var selectedInstruments = [];
+            var selectElement = document.getElementsByName("instruments")[0];
+            for (var i = 0; i < selectElement.length; i++) {
+                if (selectElement.options[i].selected) {
+                    selectedInstruments.push(selectElement.options[i].value);
+                }
+            }
+
+            alert("Selected Instruments: " + selectedInstruments.join(", "));
+        }
+
+        //Function to submit
+        function showSubmit() {
+            var inputValue = document.getElementById("name").value;
+            var inputComment = document.getElementById("comment").value;
+            var selectedColor;
+            var colorOptions = document.getElementsByName("color");
+            for (var i = 0; i < colorOptions.length; i++) {
+                if (colorOptions[i].checked) {
+                    selectedColor = colorOptions[i].value;
+                    break;
+                }
+            }
+            var selectedLanguages = [];
+            var checkboxOptions = document.querySelectorAll('input[type="checkbox"]:checked');
+            checkboxOptions.forEach(function (checkbox) {
+                selectedLanguages.push(checkbox.value);
+            });
+
+            var selectedOption = document.getElementById("school").value;
+
+            var selectedInstruments = [];
+            var selectElement = document.getElementsByName("instruments")[0];
+            for (var i = 0; i < selectElement.length; i++) {
+                if (selectElement.options[i].selected) {
+                    selectedInstruments.push(selectElement.options[i].value);
+                }
+            }
+
+            var message = "You entered: " + inputValue + "\n";
+            message += "Your comment: " + inputComment + "\n";
+            message += "Selected Color: " + (selectedColor ? selectedColor : "None") + "\n";
+            message += "Selected Languages: " + (selectedLanguages.length > 0 ? selectedLanguages.join(", ") : "None") + "\n";
+            message += "Selected Option: " + (selectedOption !== "None" ? selectedOption : "None") + "\n";
+            message += "Selected Instruments: " + (selectedInstruments.length > 0 ? selectedInstruments.join(", ") : "None") + "\n";
+
+            alert(message);
+        }
+        // Function to reset all options and input fields
+        function resetOptions() {
+            document.getElementById("name").value = "";
+            document.getElementById("comment").value = "";
+
+            var radioOptions = document.getElementsByName("radioOptions");
+            for (var i = 0; i < radioOptions.length; i++) {
+                radioOptions[i].checked = false;
+            }
+
+            document.getElementById("checkboxOption1").checked = false;
+            document.getElementById("checkboxOption2").checked = false;
+            document.getElementById("checkboxOption3").checked = false;
+            document.getElementById("checkboxOption4").checked = false;
+
+            document.getElementById("school").selectedIndex = 0;
+        }
+
+
+        function changeImage(newSrc) {
+            var imageElement = event.target;
+            var originalSrc = imageElement.src;
+
+            imageElement.src = newSrc;
+
+            // Using setTimeout to revert back to the original image after 1 second (1000 milliseconds)
+            setTimeout(function () {
+                imageElement.src = originalSrc;
+            }, 1000);
+        }
+
+
+        function displayImage(imageUrl) {
+            var imageElement = document.getElementById('displayedImage');
+            imageElement.src = imageUrl;
+        }
+
+
+    </script>
+</body>
+
+</html>

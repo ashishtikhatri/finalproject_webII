@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Car Animations</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+    h1 {
+      text-align: center;
+    }
+    .car {
+      position: absolute;
+    }
+  </style>
+  <script>
+    function animateCar(carId, imgLeftStart, imgLeftEnd, moveStep, moveSpeed) {
+      let imgLeft = imgLeftStart;
+      const car = document.getElementById(carId);
+
+      function moveCar() {
+        car.style.left = imgLeft + "px";
+        if (imgLeftEnd - imgLeftStart > 0) {
+          imgLeft += moveStep;
+          if (imgLeft > imgLeftEnd) {
+            imgLeft = imgLeftStart;
+          }
+        } else {
+          imgLeft -= moveStep;
+          if (imgLeft < imgLeftEnd) {
+            imgLeft = imgLeftStart;
+          }
+        }
+        setTimeout(moveCar, moveSpeed);
+      }
+
+      moveCar();
+    }
+  </script>
+</head>
+<body>
+  <h1>Lets the car begins</h1>
+
+  <!-- Car 1 -->
+  <img src="car1.gif" width="200" height="100" id="car1" class="car" style="top: 50px;">
+  
+  <!-- Car 2 -->
+  <img src="car2.gif" width="200" height="100" id="car2" class="car" style="top: 150px;">
+  
+  <!-- Car 3 -->
+  <img src="car3.gif" width="200" height="100" id="car3" class="car" style="top: 250px;">
+
+  <script>
+    animateCar("car1", 0, 1000, 5, 100); // Car 1 moves from left to right with speed 100ms
+    animateCar("car2", 0, 1000, 7, 150); // Car 2 moves from right to left with speed 150ms
+    animateCar("car3", 0, 1000, 10, 120); // Car 3 moves from left to right with speed 120ms
+  </script>
+</body>
+</html>
